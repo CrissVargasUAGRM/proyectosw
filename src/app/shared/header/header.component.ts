@@ -10,6 +10,7 @@ export class HeaderComponent implements OnInit {
 
   userData: any = {};
   nameComplete: string;
+  userAdmin: boolean = false;
 
   constructor(
     private router: Router
@@ -19,10 +20,19 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit(): void {
     this.nameComplete = this.userData.name;
+    this.isAdmin();
+  }
+
+  isAdmin(){
+    if(this.userData.rol == 'Admin'){
+      this.userAdmin = true;
+    }
   }
 
   logoutClick(){
-    console.log("saliste");
+    localStorage.removeItem('user');
+    localStorage.removeItem('token');
+    this.router.navigateByUrl('/auth/login');
   }
 
 }

@@ -43,4 +43,22 @@ export class TermometrofireService {
     }));
   }
 
+  getDataGrafic(username: string){
+    const body = {
+      username
+    }
+    return this.http.post(`${this.url}/api/getDataGrafic`, body).pipe(catchError(error => {
+      return throwError(error);
+    }));
+  }
+
+  getDateGrafic(username: string){
+    const body = {
+      username
+    }
+    return this.http.post(`${this.url}/api/getDateGrafic`, body).pipe(catchError(error => {
+      return throwError(error);
+    }));
+  }
+
 }

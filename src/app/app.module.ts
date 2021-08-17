@@ -16,6 +16,8 @@ import { environment } from "../environments/environment";
 import { TermometrofireService } from "./services/termometrofire.service";
 import { SharedModule } from './shared/shared.module';
 
+import { ChartsModule } from 'ng2-charts';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -29,7 +31,8 @@ import { SharedModule } from './shared/shared.module';
     BrowserAnimationsModule, // required animations module
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
-    SharedModule
+    SharedModule,
+    ChartsModule
   ],
   providers: [TermometrofireService],
   bootstrap: [AppComponent]

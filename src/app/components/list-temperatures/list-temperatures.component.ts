@@ -35,9 +35,9 @@ export class ListTemperaturesComponent implements OnInit, OnDestroy {
 
   getTemperatures(){
     this.tempSubscription = this.temperatureService.getTemperatures(this.userData.username).subscribe((res: any) => {
-      console.log(res);
+      //console.log(res);
       this.temperaturas = res;
-      console.log(this.temperaturas)
+      //console.log(this.temperaturas)
     }, error => {
       this.toast.warning('No tiene registros');
     });

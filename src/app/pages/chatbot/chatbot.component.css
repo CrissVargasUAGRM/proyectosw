@@ -1,0 +1,24 @@
+.title {
+    grid-area: title;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.content {
+    grid-area: box;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.container-fluid {
+    padding: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 80px 1fr;
+    grid-template-areas: "title title" "box box";
+    row-gap: 1em;
+    column-gap: 1em;
+    max-width: 1300px;
+}

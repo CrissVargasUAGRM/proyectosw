@@ -10,7 +10,7 @@
             <a class="nav-item nav-link" routerLinkActive="active" [routerLink]="['/client/temperaturas']" [routerLinkActiveOptions]=" {exact:true} ">
               Temperaturas
             </a>
-            <a class="nav-item nav-link" routerLinkActive="active" [routerLink]="['/client/registrar']" [routerLinkActiveOptions]=" {exact:true} ">
+            <a *ngIf="userAdmin" class="nav-item nav-link" routerLinkActive="active" [routerLink]="['/client/registrar']" [routerLinkActiveOptions]=" {exact:true} ">
               Registrar clinica y Doctor
             </a>
             <a class="nav-item nav-link" routerLinkActive="active" [routerLink]="['/client/chatbot']" [routerLinkActiveOptions]=" {exact:true} ">
@@ -22,12 +22,14 @@
     <ul class="navbar-nav ml-auto">
         <!-- Nav Item - User Information -->
         <li class="nav-item dropdown no-arrow">
-            <span class="mr-2 d-none d-lg-inline text-gray-900 small"> {{nameComplete}} </span>
-            <img class="img-profile rounded-circle" src="https://media.revistagq.com/photos/5f1e923e3c95260b5c5ad9dc/4:3/w_1124,h_843,c_limit/superman-traje-negro.jpg">
+            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Ir a Mi perfil">
+                <span class="mr-2 d-none d-lg-inline text-gray-900 small"> {{nameComplete}} </span>
+                <img class="img-profile rounded-circle" src="https://media.revistagq.com/photos/5f1e923e3c95260b5c5ad9dc/4:3/w_1124,h_843,c_limit/superman-traje-negro.jpg">
+            </a>
             <!-- Dropdown - User Information -->
             <div class="dropdown-menu dropdown-menu-right popup shadow animated--grow-in" aria-labelledby="userDropdown">
-                <a (click)="logoutClick()" class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
-                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i> Cerrar sesión
+                <a (click)="logoutClick()" class="dropdown-item colorLt" href="#" data-toggle="modal" data-target="#logoutModal">
+                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-900"></i> Cerrar sesión
                 </a>
             </div>
         </li>

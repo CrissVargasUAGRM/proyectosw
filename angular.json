@@ -27,25 +27,34 @@
                         "tsConfig": "tsconfig.app.json",
                         "assets": [
                             "src/favicon.ico",
-                            "src/assets"
+                            "src/assets",
+                            "src/_redirects"
                         ],
                         "styles": [
                             "src/styles.css",
                             "node_modules/ngx-toastr/toastr.css"
                         ],
-                        "scripts": []
+                        "scripts": [
+                            "node_modules/chart.js/dist/Chart.js"
+                        ]
                     },
                     "configurations": {
                         "production": {
+                            "optimization": true,
+                            "sourceMap": false,
+                            "namedChunks": false,
+                            "extractLicenses": true,
+                            "vendorChunk": false,
+                            "buildOptimizer": true,
                             "budgets": [{
                                     "type": "initial",
-                                    "maximumWarning": "500kb",
-                                    "maximumError": "1mb"
+                                    "maximumWarning": "5mb",
+                                    "maximumError": "10mb"
                                 },
                                 {
                                     "type": "anyComponentStyle",
-                                    "maximumWarning": "2kb",
-                                    "maximumError": "4kb"
+                                    "maximumWarning": "6kb",
+                                    "maximumError": "10kb"
                                 }
                             ],
                             "fileReplacements": [{

@@ -7,10 +7,10 @@
         </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let temp of temperaturas; index as i">
-            <th scope="row">{{i+1}}</th>
-            <td>{{temp.valor}}</td>
-            <td>{{temp.fecha | date:'yyyy-MM-dd HH:mm'}}</td>
+        <tr *ngFor="let temp of temperaturas; index as i" class="table-warning">
+            <th scope="row" class="colorLt">{{i+1}}</th>
+            <td class="colorLt">{{temp.valor}}</td>
+            <td class="colorLt">{{temp.fecha | date:'yyyy/MM/dd HH:mm'}}</td>
         </tr>
     </tbody>
 </table>
