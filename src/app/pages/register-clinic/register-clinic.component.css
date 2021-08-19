@@ -1,5 +1,5 @@
 .style {
-    grid-area: doctor;
+    grid-area: clinica;
     justify-content: center;
     align-items: center;
     border-radius: 30px;
@@ -18,7 +18,7 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr;
-    grid-template-areas: "doctor doctor";
+    grid-template-areas: "clinica clinica";
     row-gap: 1em;
     column-gap: 1em;
     max-width: 1300px;

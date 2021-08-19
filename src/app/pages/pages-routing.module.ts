@@ -4,6 +4,8 @@ import { HomeComponent } from './home/home.component';
 import { ChatbotComponent } from './chatbot/chatbot.component';
 import { MonitorearComponent } from './monitorear/monitorear.component';
 import { FormulariosComponent } from './formularios/formularios.component';
+import { RegisterClinicComponent } from './register-clinic/register-clinic.component';
+import { PagosComponent } from './pagos/pagos.component';
 
 const routes: Routes = [
   {
@@ -19,8 +21,16 @@ const routes: Routes = [
     component: MonitorearComponent
   },
   {
-    path: 'registrar',
+    path: 'registrarDoctor',
     component: FormulariosComponent
+  },
+  {
+    path: 'registrarClinica',
+    component: RegisterClinicComponent
+  },
+  {
+    path: 'pagos',
+    component: PagosComponent
   }
 ];
 

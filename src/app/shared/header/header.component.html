@@ -10,8 +10,11 @@
             <a class="nav-item nav-link" routerLinkActive="active" [routerLink]="['/client/temperaturas']" [routerLinkActiveOptions]=" {exact:true} ">
               Temperaturas
             </a>
-            <a *ngIf="userAdmin" class="nav-item nav-link" routerLinkActive="active" [routerLink]="['/client/registrar']" [routerLinkActiveOptions]=" {exact:true} ">
-              Registrar clinica y Doctor
+            <a *ngIf="userAdmin" class="nav-item nav-link" routerLinkActive="active" [routerLink]="['/client/registrarDoctor']" [routerLinkActiveOptions]=" {exact:true} ">
+              Registrar Doctor
+            </a>
+            <a *ngIf="userAdmin" class="nav-item nav-link" routerLinkActive="active" [routerLink]="['/client/registrarClinica']" [routerLinkActiveOptions]=" {exact:true} ">
+              Registrar Clinica
             </a>
             <a class="nav-item nav-link" routerLinkActive="active" [routerLink]="['/client/chatbot']" [routerLinkActiveOptions]=" {exact:true} ">
               ChatBot
@@ -28,6 +31,9 @@
             </a>
             <!-- Dropdown - User Information -->
             <div class="dropdown-menu dropdown-menu-right popup shadow animated--grow-in" aria-labelledby="userDropdown">
+                <a [routerLink]="['/client/pagos']" routerLinkActive="router-link-active" class="dropdown-item colorLt" href="#" data-toggle="modal" data-target="#logoutModal">
+                    <i class="fas fas fa-money-bill-wave fa-sm fa-fw mr-2 text-gray-900"></i> Cerrar sesión
+                </a>
                 <a (click)="logoutClick()" class="dropdown-item colorLt" href="#" data-toggle="modal" data-target="#logoutModal">
                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-900"></i> Cerrar sesión
                 </a>
