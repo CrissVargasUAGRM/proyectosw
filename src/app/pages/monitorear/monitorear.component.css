@@ -26,3 +26,22 @@
     column-gap: 1em;
     max-width: 1300px;
 }
+
+@media (max-width: 748px) {
+    .container-fluid {
+        padding: 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 80px 1fr 1fr;
+        grid-template-areas: "title" "listTermometro" "grafica";
+        row-gap: 1em;
+        column-gap: 1em;
+        max-width: 1300px;
+    }
+    .list-termometro {
+        padding: 5px !important;
+    }
+    .grafica {
+        padding: 5px !important;
+    }
+}

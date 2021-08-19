@@ -23,3 +23,9 @@
     column-gap: 1em;
     max-width: 1300px;
 }
+
+@media (max-width: 748px) {
+    .card-body {
+        width: 500px;
+    }
+}

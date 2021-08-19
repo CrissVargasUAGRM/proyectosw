@@ -6,27 +6,33 @@ import { MonitorearComponent } from './monitorear/monitorear.component';
 import { FormulariosComponent } from './formularios/formularios.component';
 import { RegisterClinicComponent } from './register-clinic/register-clinic.component';
 import { PagosComponent } from './pagos/pagos.component';
+import { AuthGuard } from '../auth.guard';
 
 const routes: Routes = [
   {
     path: 'home',
-    component: HomeComponent
+    component: HomeComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'chatbot',
-    component: ChatbotComponent
+    component: ChatbotComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'temperaturas',
-    component: MonitorearComponent
+    component: MonitorearComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'registrarDoctor',
-    component: FormulariosComponent
+    component: FormulariosComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'registrarClinica',
-    component: RegisterClinicComponent
+    component: RegisterClinicComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'pagos',

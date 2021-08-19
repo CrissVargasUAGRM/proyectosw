@@ -12,6 +12,11 @@
     margin: auto;
 }
 
+.chatbot {
+    width: 500px;
+    height: 600px;
+}
+
 .container-fluid {
     padding: 0;
     display: grid;
@@ -21,4 +26,29 @@
     row-gap: 1em;
     column-gap: 1em;
     max-width: 1300px;
+}
+
+@media (max-width: 748px) {
+    .content {
+        grid-area: box;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    }
+    .container-fluid {
+        padding: 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 80px 1fr;
+        grid-template-areas: "title" "box";
+        row-gap: 1em;
+        column-gap: 1em;
+    }
+    .box {
+        width: 100%;
+    }
+    .chatbot {
+        width: 300px;
+        height: 400px;
+    }
 }

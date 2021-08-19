@@ -23,20 +23,20 @@
 }
 
 .tempText p:first-child {
-    font-size: 1.8em;
+    font-size: 3em;
     text-align: center;
 }
 
 .tempText p:last-child {
     text-align: center;
-    font-size: 0.8em;
+    font-size: 3em;
 }
 
 h3 {
     text-align: center;
 }
 
-@media (min-width: 425px) {
+@media (max-width: 425px) {
     .tempText p:first-child {
         font-size: 3em;
         text-align: center;

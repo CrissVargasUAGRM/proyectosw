@@ -9,6 +9,24 @@ body {
     font-family: 'open sans';
 }
 
+.pago1 {
+    grid-area: pag1;
+    justify-content: center;
+    align-items: center;
+}
+
+.pago2 {
+    grid-area: pag2;
+    justify-content: center;
+    align-items: center;
+}
+
+.pago3 {
+    grid-area: pag3;
+    justify-content: center;
+    align-items: center;
+}
+
 .container-fluid {
     width: 90%;
     max-width: 900px;
@@ -76,4 +94,39 @@ body {
     color: #f1f1f2;
     transition: scale(1.1);
     cursor: pointer;
+}
+
+@media (max-width: 748px) {
+    .tabla {
+        width: 33%;
+        height: 400px;
+        margin: auto;
+        border: 2px dashed #343759;
+        border-radius: 4px;
+        box-shadow: 0px 0px 4px 0px #343759;
+        text-align: center;
+        flex-grow: 1;
+        color: #343759;
+    }
+    .container-fluid {
+        width: 100%;
+        max-width: 900px;
+        margin: auto;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+    .boton {
+        display: inline-block;
+        width: 50%;
+        padding: 12px;
+        background: #a5f059;
+        text-decoration: none;
+        color: #343759;
+        border-radius: 100px;
+        text-align: center;
+        font-size: 10px;
+    }
 }
