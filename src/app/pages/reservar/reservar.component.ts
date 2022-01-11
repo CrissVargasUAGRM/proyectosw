@@ -25,6 +25,8 @@ export class ReservarComponent implements OnInit, OnDestroy {
   tempSubscripcion: Subscription;
   doctor :string;
 
+  payment: any;
+
   model: NgbDateStruct;
 
   constructor(
@@ -38,6 +40,7 @@ export class ReservarComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.getDoctors();
+    this.getPayment();
   }
 
   ngOnDestroy(): void {
@@ -55,7 +58,7 @@ export class ReservarComponent implements OnInit, OnDestroy {
   registerReserva(){
     const reserva = {
       fecha: this.fecha,
-      iddoctor: Number.parseInt(this.doctor),
+      iddoctor: this.doctor,
       client: this.client,
       email: this.email,
       telefono: Number.parseInt(this.telefono),
@@ -65,12 +68,27 @@ export class ReservarComponent implements OnInit, OnDestroy {
     return this.reservaService.registerReserva(reserva).subscribe(
       (res: any) => {
         this.toast.success(res.message);
-        this.router.navigate(['/client/home']);
+        console.log(this.payment.hosted_url)
+        this.urlPayment();
       },
       (error: any) => {
         console.log(error);
       }
     );
+  }
+
+  getPayment(): void{
+    this.tempSubscripcion = this.reservaService.getPayment().subscribe(
+      (res: any) => {
+        this.payment = res;
+      }, (error) => {
+        console.log(error);
+      }
+    );
+  }
+
+  urlPayment(){
+    document.location.href = this.payment.hosted_url;
   }
 
 }
