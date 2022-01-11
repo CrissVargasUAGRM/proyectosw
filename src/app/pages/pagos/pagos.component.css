@@ -40,7 +40,7 @@ body {
 
 .tabla {
     width: 33%;
-    height: 400px;
+    height: 600px;
     margin: auto;
     border: 2px dashed #343759;
     border-radius: 4px;
@@ -98,8 +98,8 @@ body {
 
 @media (max-width: 748px) {
     .tabla {
-        width: 33%;
-        height: 400px;
+        width: 50%;
+        height: 500px;
         margin: auto;
         border: 2px dashed #343759;
         border-radius: 4px;
@@ -120,7 +120,7 @@ body {
     }
     .boton {
         display: inline-block;
-        width: 50%;
+        width: 90px;
         padding: 12px;
         background: #a5f059;
         text-decoration: none;
@@ -128,5 +128,8 @@ body {
         border-radius: 100px;
         text-align: center;
         font-size: 10px;
+    }
+    .imagepago {
+        width: 100px;
     }
 }

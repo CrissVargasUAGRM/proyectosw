@@ -1,0 +1,8 @@
+.card{
+    flex-wrap: wrap !important;
+    transition: 0.75s all ease-in-out;
+}
+
+.card:hover{
+    transform: scale(1.05);
+}

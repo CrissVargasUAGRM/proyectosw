@@ -1,3 +1,7 @@
+.container{
+    margin-top: 120px !important;
+}
+
 .texto-emotivo {
     max-width: 768px;
     align-self: center;

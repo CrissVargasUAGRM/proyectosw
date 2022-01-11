@@ -11,6 +11,9 @@ import { SharedModule } from '../shared/shared.module';
 import { RegisterClinicComponent } from './register-clinic/register-clinic.component';
 import { FormsModule } from '@angular/forms';
 import { PagosComponent } from './pagos/pagos.component';
+import { ClinicsComponent } from './clinics/clinics.component';
+import { DoctorsclinicComponent } from './doctorsclinic/doctorsclinic.component';
+import { ReservarComponent } from './reservar/reservar.component';
 
 
 @NgModule({
@@ -20,7 +23,10 @@ import { PagosComponent } from './pagos/pagos.component';
     FormulariosComponent,
     MonitorearComponent,
     RegisterClinicComponent,
-    PagosComponent
+    PagosComponent,
+    ClinicsComponent,
+    DoctorsclinicComponent,
+    ReservarComponent
   ],
   imports: [
     CommonModule,

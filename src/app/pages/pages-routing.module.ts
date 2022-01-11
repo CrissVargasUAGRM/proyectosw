@@ -7,6 +7,8 @@ import { FormulariosComponent } from './formularios/formularios.component';
 import { RegisterClinicComponent } from './register-clinic/register-clinic.component';
 import { PagosComponent } from './pagos/pagos.component';
 import { AuthGuard } from '../auth.guard';
+import { ClinicsComponent } from './clinics/clinics.component';
+import { ReservarComponent } from './reservar/reservar.component';
 
 const routes: Routes = [
   {
@@ -37,6 +39,14 @@ const routes: Routes = [
   {
     path: 'pagos',
     component: PagosComponent
+  },
+  {
+    path: 'clinicas',
+    component: ClinicsComponent,
+  },
+  {
+    path: 'reservar',
+    component: ReservarComponent
   }
 ];
 
