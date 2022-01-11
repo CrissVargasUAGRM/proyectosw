@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  url: 'https://project-sw1.herokuapp.com',
+  url: 'https://projectsw2.herokuapp.com',
   firebase: {
     apiKey: "AIzaSyC6aV9GSiI2qOP317m6vzINSg1APUoUR0Y",
     authDomain: "sw-temperatura.firebaseapp.com",

@@ -1,0 +1,20 @@
+<app-header></app-header>
+<div class="container-fluid">
+    <div class="row p-3">
+        <div *ngFor="let clinic of clinicas">
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="https://www.ebainsurances.com/hubfs/hospitales/Clinicas%2008.jpg" alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title">{{clinic.nombre}}</h5>
+                      <p class="card-text">{{clinic.direccion}}</p>
+                      <a href="#" class="btn btn-primary">Ver doctores</a>
+                    </div>
+                  </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+

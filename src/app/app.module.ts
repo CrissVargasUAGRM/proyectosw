@@ -17,6 +17,7 @@ import { TermometrofireService } from "./services/termometrofire.service";
 import { SharedModule } from './shared/shared.module';
 
 import { ChartsModule } from 'ng2-charts';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { ChartsModule } from 'ng2-charts';
     AngularFireModule.initializeApp(environment.firebase),
     AngularFireDatabaseModule,
     SharedModule,
-    ChartsModule
+    ChartsModule,
+    NgbModule
   ],
   providers: [TermometrofireService],
   bootstrap: [AppComponent]

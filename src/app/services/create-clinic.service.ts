@@ -6,12 +6,16 @@ import { Injectable } from '@angular/core';
 })
 export class CreateClinicService {
 
-  private url: string = 'https://project-sw1.herokuapp.com';
+  private url: string = 'https://projectsw2.herokuapp.com';
   constructor( private http:HttpClient) {
 
   }
 
   register_clinic(clinic: any){
     return this.http.post(this.url + "/api/registerClinic", clinic);
+  }
+
+  getClinics(){
+    return this.http.get(this.url + "/api/getClinics");
   }
 }

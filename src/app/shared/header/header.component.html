@@ -1,4 +1,76 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-gradient-info shadow topbar static">
+<nav class="menu">
+    <section class="menu__container">
+        <img src="../../../assets/img/software.png" height="40" alt="Página principal Comfeco" />
+
+        <ul class="menu__links" #menuLinks>
+            <li class="menu__item">
+                <a routerLinkActive="active" [routerLink]="['/client/home']" [routerLinkActiveOptions]=" {exact:true} " class="menu__link">Termometro</a>
+            </li>
+
+            <li class="menu__item">
+                <a routerLinkActive="active" [routerLink]="['/client/temperaturas']" [routerLinkActiveOptions]=" {exact:true} " class="menu__link">Temperaturas</a>
+            </li>
+
+            <li class="menu__item menu__item__show" #menuItemShow>
+                <a routerLinkActive="disable" class="menu__link">Clinicas <img src="../../../assets/icons/arrow.svg" alt=""
+                        class="menu__arrow"></a>
+                <ul class="menu__nesting">
+                    <li class="menu__inside">
+                        <a *ngIf="userAdmin" routerLinkActive="active" [routerLink]="['/client/registrarClinica']" [routerLinkActiveOptions]=" {exact:true} " class="menu__link menu__link__inside">Registrar Clinica</a>
+                    </li>
+                    <li class="menu__inside">
+                        <a routerLinkActive="active" [routerLink]="['/client/clinicas']" [routerLinkActiveOptions]=" {exact:true} " class="menu__link menu__link__inside" class="menu__link menu__link__inside">Ver Clinicas</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li class="menu__item menu__item__show" #menuItemShow>
+                <a routerLinkActive="disable" class="menu__link">Doctores <img src="../../../assets/icons/arrow.svg" alt=""
+                        class="menu__arrow"></a>
+                <ul class="menu__nesting">
+                    <li class="menu__inside">
+                        <a *ngIf="userAdmin" class="nav-item nav-link" routerLinkActive="black" [routerLink]="['/client/registrarDoctor']" [routerLinkActiveOptions]=" {exact:true} " class="menu__link menu__link__inside">Registrar Doctor</a>
+                    </li>
+                    <li class="menu__inside">
+                        <a href="#" class="menu__link menu__link__inside">Ver Doctores</a>
+                    </li>
+                </ul>
+            </li>
+            <li class="menu__item menu__item__show">
+                <a routerLinkActive="active" [routerLink]="['/client/reservar']" [routerLinkActiveOptions]=" {exact:true} " class="menu__link menu__link__inside">Reservar</a>
+            </li>
+        </ul>
+
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item dropdown no-arrow">
+                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false" title="Ir a Mi perfil">
+                    <span class="mr-2 d-none d-lg-inline text-gray-900 small"> {{nameComplete}} </span>
+                    <img class="img-profile rounded-circle"
+                        src="https://media.revistagq.com/photos/5f1e923e3c95260b5c5ad9dc/4:3/w_1124,h_843,c_limit/superman-traje-negro.jpg">
+                </a>
+                <div class="dropdown-menu dropdown-menu-right popup shadow animated--grow-in"
+                    aria-labelledby="userDropdown">
+                    <a [routerLink]="['/client/pagos']" routerLinkActive="router-link-active"
+                        class="dropdown-item colorLt" href="#" data-toggle="modal" data-target="#logoutModal">
+                        <i class="fas fas fa-money-bill-wave fa-sm fa-fw mr-2 text-gray-900"></i> Pagar
+                    </a>
+                    <a (click)="logoutClick()" class="dropdown-item colorLt" href="#" data-toggle="modal"
+                        data-target="#logoutModal">
+                        <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-900"></i> Cerrar sesión
+                    </a>
+                </div>
+            </li>
+        </ul>
+
+        <div class="menu__hamburguer" #menuHamburguer>
+            <img src="../../../assets/icons/menu.svg" alt="" class="menu__img">
+        </div>
+    </section>
+</nav>
+
+
+<!-- <nav class="navbar navbar-expand-lg navbar-light bg-gradient-info shadow topbar static">
     <a href="/client/home" class="navbar-brand image">
         <img src="../../../assets/img/software.png" height="40" alt="Página principal Comfeco" title="Ir a página de inicio" />
     </a>
@@ -21,13 +93,11 @@
             </a>
         </div>
     </div>
-    <!-- Topbar Navbar -->
     <ul class="navbar-nav ml-auto">
         <li class="nav-item dropdown no-arrow d-md-none">
             <a class="nav-link dropdown-toggle" href="#" id="searchDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 <i class="fas fa-angle-down fa-fw"></i>
             </a>
-            <!-- Dropdown - Messages -->
             <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in popup position-absolute" aria-labelledby="searchDropdown">
                 <a class="dropdown-item headerLinks text-gray-400 " routerLinkActive="black" [routerLink]="['/client/home']" [routerLinkActiveOptions]=" {exact:true} ">
                     <i class="fas fa-thermometer mr-2 text-gray-900"></i> Termometro
@@ -51,13 +121,11 @@
                     <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-900"></i> Cerrar sesión
                 </a>
             </div>
-            <!-- Nav Item - User Information -->
             <li class="nav-item dropdown no-arrow">
                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" title="Ir a Mi perfil">
                     <span class="mr-2 d-none d-lg-inline text-gray-900 small"> {{nameComplete}} </span>
                     <img class="img-profile rounded-circle" src="https://media.revistagq.com/photos/5f1e923e3c95260b5c5ad9dc/4:3/w_1124,h_843,c_limit/superman-traje-negro.jpg">
                 </a>
-                <!-- Dropdown - User Information -->
                 <div class="dropdown-menu dropdown-menu-right popup shadow animated--grow-in" aria-labelledby="userDropdown">
                     <a [routerLink]="['/client/pagos']" routerLinkActive="router-link-active" class="dropdown-item colorLt" href="#" data-toggle="modal" data-target="#logoutModal">
                         <i class="fas fas fa-money-bill-wave fa-sm fa-fw mr-2 text-gray-900"></i> Pagar
@@ -69,4 +137,4 @@
             </li>
     </ul>
 </nav>
-<!-- End of Topbar -->
+ -->

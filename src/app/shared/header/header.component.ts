@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { Router } from "@angular/router";
 
 @Component({
@@ -7,6 +7,10 @@ import { Router } from "@angular/router";
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+
+  @ViewChild("menuItemShow") menuItemShow: ElementRef;
+  @ViewChild("menuLinks") menuLinks: ElementRef;
+  @ViewChild("menuHamburguer") menuHamburguer: ElementRef;
 
   userData: any = {};
   nameComplete: string;
@@ -19,6 +23,7 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.addClick();
     this.nameComplete = this.userData.name;
     this.isAdmin();
   }
@@ -33,6 +38,20 @@ export class HeaderComponent implements OnInit {
     localStorage.removeItem('user');
     localStorage.removeItem('token');
     this.router.navigateByUrl('/auth/login');
+  }
+
+  addClick(){
+    const listElements = document.querySelectorAll('.menu__item__show');
+    const list = document.querySelector('.menu__links');
+    const menu = document.querySelector('.menu__hamburguer');
+
+    listElements.forEach(element => {
+      element.addEventListener('click', () => {
+        console.log();
+        let submenu = element.children[1];
+        element.classList.toggle('menu__item__active');
+      });
+    });
   }
 
 }

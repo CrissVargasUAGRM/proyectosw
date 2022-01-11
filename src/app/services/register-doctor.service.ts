@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class RegisterDoctorService {
 
-  private url: string = 'https://project-sw1.herokuapp.com';
+  private url: string = 'https://projectsw2.herokuapp.com';
   constructor(private http: HttpClient) {
 
   }
